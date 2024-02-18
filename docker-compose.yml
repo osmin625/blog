@@ -14,7 +14,7 @@ services:
       - "8080:8080"
     # 환경 변수 설정
     # environment:
-    
+
     # 볼륨 설정
     # volumes:
 
@@ -32,7 +32,7 @@ services:
     # 환경 변수 설정
     environment: 
       # PostgreSQL 계정 및 패스워드 설정 옵션
-      POSTGRES_USER: root
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     # 볼륨 설정
     volumes:
