@@ -9,14 +9,19 @@ services:
     restart: always
     # 컨테이너명 설정
     container_name: blogback
+    build:
+      context: ./backend
+      args:
+        DEV: "true"
     # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)
     ports:
       - "8080:8080"
-    # 환경 변수 설정
-    # environment:
-
-    # 볼륨 설정
-    # volumes:
+    env_file:
+      - ./backend/.env
+    command: uvicorn main:app --reload --host 0.0.0.0 --port 8080
+    volumes:
+      - ./backend/app:/app/
+      - ./backend/ml/model/:/app/ml/model/
 
   # 서비스 명
   postgresql:
@@ -33,7 +38,7 @@ services:
     environment: 
       # PostgreSQL 계정 및 패스워드 설정 옵션
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     # 볼륨 설정
     volumes:
       - C:\Users\Ohseungmin\workspace\blog\pgdata:/var/lib/postgresql/data
@@ -52,7 +57,20 @@ services:
     # 환경 변수 설정
     environment:
       PGADMIN_DEFAULT_EMAIL: tmdals179@naver.com
-      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_DEFAULT_PASSWORD: ${DB_PASSWORD}
     # 볼륨 설정
     volumes:
       - C:\Users\Ohseungmin\workspace\blog\pgadmin:/var/lib/pgadmin
+
+  redis:
+    image: redis
+    restart: always
+    container_name: redis
+    hostname: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - C:\Users\Ohseungmin\workspace\blog\redis\redis_data:/data
+      - C:\Users\Ohseungmin\workspace\blog\redis\redis.conf:/etc/redis/redis.conf
+    # networks:
+    #   - redis-server
