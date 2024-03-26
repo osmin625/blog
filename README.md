@@ -2,6 +2,35 @@
 
 ### 깃허브 기술 블로그에 게시글 개인화 추천 기능을 탑재하기
 
+## 디렉토리 구조 & Github Submodules
+
+```
+blog <-- current repository
+├─backend <-- osmin625/blog-backend
+│  ├─app
+│  │  ├─api
+│  │  ├─core
+│  │  ├─database
+│  │  ├─ml
+│  │  ├─models
+│  │  └─schemas
+│  ├─ml
+│  ├─notebooks
+│  └─tests
+├─frontend <-- osmin625/blog-frontend
+│  ├─assets
+│  ├─content
+│  │  └─posts
+│  ├─data
+│  ├─layouts
+│  ├─public <-- osmin625/osmin625.github.io
+│  ├─resources
+│  ├─static
+│  └─themes
+│      └─gokarna <-- osmin625/gokarna [forked]
+└─images
+```
+
 # blog Architecture
 ![image](./images/architecture.png)
 
