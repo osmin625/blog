@@ -1,0 +1,15 @@
+INFO:root:[2 files name successfully changed]
+INFO:root:[2 Images Name Changed] Untitled.png -> hugo_blog_category_404_해결_방법.png
+INFO:root:[2 files name successfully changed]
+INFO:root:[2 Images Name Changed] Untitled.png -> docker.png
+INFO:root:[2 files name successfully changed]
+INFO:root:[1 Images Name Changed] Untitled.png -> git_branch.png
+WARNING:root:[git_branch.md] The [categories] parameter does not exist in the frontmatter of the post.
+WARNING:root:[git_branch.md] The [tags] parameter does not exist in the frontmatter of the post.
+INFO:root:[2 files name successfully changed]
+INFO:root:[1 Images Name Changed] Untitled.png -> git_branch.png
+INFO:root:[1 files name successfully changed]
+INFO:root:[5 files name successfully changed]
+INFO:root:[1 Images Name Changed] Untitled.png -> entropy_엔트로피.png
+INFO:root:[1 Images Name Changed] Untitled.png -> kullback_leibler_kl_divergence.png
+ERROR:root:[entropy_엔트로피.md] 135th line latex syntax error occured.
