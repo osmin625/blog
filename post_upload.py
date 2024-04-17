@@ -92,9 +92,12 @@ def organizeNotionExportFile(path_):
 def updateImageFileName(path_):
     def _updateImageFileName(path_, folder_name):
         path_ = path.join(path_, folder_name)
-        for i, img in enumerate(listdir(path_)):
-            rename(path.join(path_, img), path.join(path_, folder_name + str(i) + '.png'))
-        logging.info(f'[{i+1} Images Name Changed] {img} -> {folder_name + '.png'}')
+        for img in listdir(path_):
+            fname, ext = path.splitext(img)
+            fnameToken = fname.split()
+            idx = fnameToken[-1] if len(fnameToken) > 1 else '0'
+            rename(path.join(path_, img), path.join(path_, folder_name + idx + ext))
+        logging.info(f'[Image Name Changed] {img} -> {folder_name + idx + ext}')
     
     for file in listdir(path_):
         if path.isdir(path.join(path_, file)):
